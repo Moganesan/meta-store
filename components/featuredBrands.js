@@ -38,7 +38,7 @@ const FeaturedBrands = () => {
       </div>
       <div className="mt-10">
         <Swiper
-          spaceBetween={10}
+          spaceBetween={0}
           slidesPerView={4}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
@@ -63,7 +63,7 @@ const FeaturedBrands = () => {
               </h1>
             </div>
           </SwiperSlide>
-          <SwiperSlide style={{ marginLeft: 40 }}>
+          <SwiperSlide>
             <div className="hover:bg-white hover:shadow-2xl hover:p-2 cursor-pointer transition-all w-72 flex flex-col items-start justify-center h-72 rounded-lg">
               <img src="https://farmart.botble.com/storage/brands/2.png" />
               <span className="mt-5 font-bold text-gray-600 w-72 text-xl text-start">
@@ -74,7 +74,7 @@ const FeaturedBrands = () => {
               </h1>
             </div>
           </SwiperSlide>
-          <SwiperSlide style={{ marginLeft: 40 }}>
+          <SwiperSlide>
             <div className="hover:bg-white hover:shadow-2xl hover:p-2 cursor-pointer transition-all w-72 flex flex-col items-start justify-center h-72 rounded-lg">
               <img src="https://farmart.botble.com/storage/brands/3.png" />
               <span className="mt-5 font-bold text-gray-600 w-72 text-xl text-start">
@@ -85,7 +85,7 @@ const FeaturedBrands = () => {
               </h1>
             </div>
           </SwiperSlide>
-          <SwiperSlide style={{ marginLeft: 40 }}>
+          <SwiperSlide>
             <div className="hover:bg-white hover:shadow-2xl hover:p-2 cursor-pointer transition-all w-72 flex flex-col items-start justify-center h-72 rounded-lg">
               <img src="https://farmart.botble.com/storage/brands/4.png" />
               <span className="mt-5 font-bold text-gray-600 w-72 text-xl text-start">
@@ -96,7 +96,7 @@ const FeaturedBrands = () => {
               </h1>
             </div>
           </SwiperSlide>
-          <SwiperSlide style={{ marginLeft: 40 }}>
+          <SwiperSlide>
             <div className="hover:bg-white hover:shadow-2xl hover:p-2 cursor-pointer transition-all w-72 flex flex-col items-start justify-center h-72 rounded-lg">
               <img src="https://farmart.botble.com/storage/brands/4.png" />
               <span className="mt-5 font-bold text-gray-600 w-72 text-xl text-start">

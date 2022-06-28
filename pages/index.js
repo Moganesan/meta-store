@@ -5,6 +5,7 @@ import Header from "../components/header";
 import Banner from "../components/banner";
 import Categories from "../components/categories";
 import FeaturedBrands from "../components/featuredBrands";
+import TodaysDeal from "../components/todaysDeal";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Banner />
       <Categories />
       <FeaturedBrands />
+      <TodaysDeal />
     </div>
   );
 }
