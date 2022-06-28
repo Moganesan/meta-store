@@ -3,6 +3,7 @@ import { SearchIcon, ChevronDownIcon } from "@heroicons/react/solid";
 import { Fragment } from "react";
 import { Popover, Transition } from "@headlessui/react";
 import { ShoppingBagIcon, HeartIcon } from "@heroicons/react/outline";
+import Link from "next/link";
 
 const solutions = [
   {
@@ -32,9 +33,9 @@ const Header = () => {
         style={{ borderBottomWidth: 1 }}
         className="p-5 flex items-center justify-evenly"
       >
-        <div>
+        <Link href={"/"}>
           <Image width={200} height={50} src={"/logo.svg"} />
-        </div>
+        </Link>
         <div
           style={{ width: 550 }}
           className="bg-gray-background rounded-sm flex h-11"
