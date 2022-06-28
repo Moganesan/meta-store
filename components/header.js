@@ -80,6 +80,7 @@ const Header = () => {
         className="grid grid-flow-col gap-5 px-10 py-5 font-bold text-sm"
       >
         <li>Home</li>
+        <li>All Categories</li>
         <li>Fruits & Vegitables</li>
         <li>Breads & Sweets</li>
         <li>Raw Meats</li>
