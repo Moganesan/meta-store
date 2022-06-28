@@ -8,6 +8,7 @@ import FeaturedBrands from "../components/featuredBrands";
 import TodaysDeal from "../components/todaysDeal";
 import FeaturedProducts from "../components/featuredProducts";
 import CategoryProducts from "../components/categoryProducts";
+import Footer from "../components/footer";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <TodaysDeal />
       <FeaturedProducts />
       <CategoryProducts category={"Fruits & Vegitables"} />
+      <Footer />
     </div>
   );
 }
