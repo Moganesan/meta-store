@@ -136,7 +136,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="border-t-2 flex items-center justify-between px-10 py-11">
-        <p>© 2022 Farmart. All Rights Reserved.</p>
+        <p>© 2022 Meta Store. All Rights Reserved.</p>
         <img src="https://farmart.botble.com/storage/general/footer-payments.png" />
         <div></div>
       </div>
