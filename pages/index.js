@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import Header from "../components/header";
 import Banner from "../components/banner";
 import Categories from "../components/categories";
+import FeaturedBrands from "../components/featuredBrands";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       <Header />
       <Banner />
       <Categories />
+      <FeaturedBrands />
     </div>
   );
 }
