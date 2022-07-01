@@ -78,7 +78,7 @@ const Header = () => {
 
       <ul
         style={{ borderBottomWidth: 1 }}
-        className="grid grid-flow-col gap-5 px-10 py-5 font-bold text-sm"
+        className="grid grid-flow-col gap-5 px-10 py-5 text-sm"
       >
         <li>Home</li>
         <li>All Categories</li>
