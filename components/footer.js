@@ -2,7 +2,7 @@ import { PhoneIcon, HomeIcon, MailIcon } from "@heroicons/react/outline";
 const Footer = () => {
   return (
     <footer>
-      <div className="flex items-center justify-evenly py-14 border-t-2 border-b-2 mt-10">
+      <div className="flex items-center justify-evenly py-14 border-t-2 border-b-2">
         <div className="flex items-center justify-center">
           <div>
             <img src="https://farmart.botble.com/storage/general/icon-rocket.png" />
