@@ -26,9 +26,9 @@ const Login = () => {
         password,
       });
 
-      if (res.status == 200) router.push("/");
+      if (res.status == 200) window.location.pathname = "/";
     } catch (error) {
-      if (error.response.data) {
+      if (error.response) {
         const { message } = error.response.data;
 
         setError(message);
@@ -41,7 +41,10 @@ const Login = () => {
       <div className="w-96 bg-white flex flex-col items-center mt-10 mb-10 p-5">
         <h1 className="font-bold text-2xl">Sign up</h1>
 
-        <button className="flex items-center rounded-md border-2 w-full justify-center py-2 mt-4">
+        <button
+          onClick={() => router.push("/api/customer/auth/google")}
+          className="flex items-center rounded-md border-2 w-full justify-center py-2 mt-4"
+        >
           <Image src={"/google.svg"} width={20} height={20} />
           <span className="font-bold text-slate-700 ml-2 text-sm">
             Sign up with Google

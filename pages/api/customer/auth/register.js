@@ -32,13 +32,37 @@ export default async function register(req, res) {
     },
   });
 
-  const refreshToken = jwt.sign(user, process.env.REFRESH_TOKEN_PRIVATE_KEY, {
-    expiresIn: "30d",
-  });
+  const refreshToken = jwt.sign(
+    {
+      uid: user.id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+      image: user.image,
+      createdAt: user.createdAt,
+    },
+    process.env.REFRESH_TOKEN_PRIVATE_KEY,
+    {
+      expiresIn: "30d",
+    }
+  );
 
-  const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_PRIVATE_KEY, {
-    expiresIn: "1h",
-  });
+  const accessToken = jwt.sign(
+    {
+      uid: user.id,
+      name: user.name,
+      email: user.email,
+      role: user.role,
+      image: user.image,
+      createdAt: user.createdAt,
+    },
+    process.env.ACCESS_TOKEN_PRIVATE_KEY,
+    {
+      expiresIn: "1h",
+    }
+  );
+
+  console.log(refreshToken.length);
 
   await prisma.session.create({
     data: {

@@ -13,13 +13,13 @@ datasource db {
 model User {
   id            String    @id @default(cuid())
   name          String
-  email         String
+  email         String    @unique
   password      String?
-  emailVerified Boolean
+  emailVerified Boolean?
   role          String
   image         String?
-  createdAt     DateTime
-  lastSignIn    DateTime
+  createdAt     DateTime  @default(now())
+  lastSignIn    DateTime?
   Customer      Customer?
 }
 
@@ -27,7 +27,7 @@ model Session {
   id            Int      @id @default(autoincrement())
   uid           String   @unique
   createdAt     DateTime @default(now())
-  refresh_token String
+  refresh_token String @db.VarChar(500)
 }
 
 model Customer {
