@@ -27,12 +27,86 @@ model Session {
   id            Int      @id @default(autoincrement())
   uid           String   @unique
   createdAt     DateTime @default(now())
-  refresh_token String @db.VarChar(500)
+  refresh_token String   @db.VarChar(500)
 }
 
 model Customer {
-  id        Int      @id @default(autoincrement())
+  id        String   @id @default(cuid())
   createdAt DateTime @default(now())
-  User      User     @relation(fields: [uid], references: [id])
+  user      User     @relation(fields: [uid], references: [id])
   uid       String   @unique
+  Review    Review[]
+}
+
+model Admin {
+  id       String     @id @default(cuid())
+  Category Category[]
+}
+
+model Vendor {
+  id        String    @id @default(cuid())
+  brand     String
+  logo      String    @db.VarChar(500)
+  about     String    @db.VarChar(1000)
+  location  String
+  mobile    String
+  email     String
+  createdAt DateTime  @default(now())
+  Product   Product[]
+}
+
+model Category {
+  id        String    @id @default(uuid())
+  name      String
+  createdAt DateTime  @default(now())
+  admin     Admin     @relation(fields: [createdBy], references: [id])
+  createdBy String
+  Product   Product[]
+}
+
+model Product {
+  id           String         @id @default(uuid())
+  title        String
+  description  String         @db.LongText
+  price        Int
+  vendor       Vendor         @relation(fields: [vendorId], references: [id])
+  vendorId     String
+  category     Category       @relation(fields: [categoryId], references: [id])
+  categoryId   String
+  createdAt    DateTime       @default(now())
+  modifiedAt   DateTime
+  Tags         Tags[]
+  ProductImage ProductImage[]
+}
+
+model Review {
+  id          String        @id @default(uuid())
+  message     String        @db.LongText
+  customer    Customer      @relation(fields: [customerId], references: [id])
+  customerId  String
+  createdAt   DateTime      @default(now())
+  ReviewImage ReviewImage[]
+}
+
+model ReviewImage {
+  id       Int    @id @default(autoincrement())
+  image    String @db.VarChar(500)
+  review   Review @relation(fields: [reviewId], references: [id])
+  reviewId String
+}
+
+model ProductImage {
+  id        Int      @id @default(autoincrement())
+  image     String   @db.VarChar(500)
+  createdAt DateTime @default(now())
+  product   Product  @relation(fields: [productId], references: [id])
+  productId String
+}
+
+model Tags {
+  id        Int      @id @default(autoincrement())
+  name      String
+  product   Product  @relation(fields: [productId], references: [id])
+  productId String
+  createdAt DateTime @default(now())
 }
